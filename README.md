@@ -5,9 +5,7 @@ Resumo das diferentes configurações e parâmetros utilizados no Playground do 
 
 ## **Tokenização**
 ### O que é?
-A tokenização é o processo de **dividir texto** em **tokens**, que podem ser palavras, subpalavras, caracteres ou até unidades especiais.  
-Este processo é essencial para modelos de linguagem de inteligência artificial entenderem e processarem texto.  
-Os modelos têm um limite máximo de tokens por resposta. Se um texto ultrapassa esse limite, os tokens extras são cortados.  
+A tokenização é o processo de **dividir texto** em **tokens**, que podem ser palavras, subpalavras, caracteres ou até unidades especiais. Este processo é essencial para modelos de linguagem de inteligência artificial entenderem e processarem texto. Os modelos têm um limite máximo de tokens por resposta. Se um texto ultrapassa esse limite, os tokens extras são cortados.  
 
 ### Como funciona?
 1. **Divisão do texto:**  
@@ -34,11 +32,11 @@ Os modelos têm um limite máximo de tokens por resposta. Se um texto ultrapassa
 
 ## **System Message**
 ### O que é?
-A **System Message** é uma mensagem especial usada para definir o comportamento do modelo antes do início da conversa. Diferente das mensagens do usuário, essa configuração é invisível para quem interage com o modelo, mas influencia suas respostas.
+A **System Message** é uma mensagem especial usada para definir o comportamento do modelo antes do início da conversa. Diferente das mensagens do utilizador, esta configuração é invisível para quem interage com o modelo, mas influencia as suas respostas.
 
 ### Como funciona?
-1. **Define o papel da IA:** Pode instruir o modelo a agir como um especialista em uma área específica.  
-   **Exemplo:** *"Você é um assistente especializado em segurança cibernética."*
+1. **Define o papel da IA:** Pode instruir o modelo a agir como um especialista numa área específica.  
+   **Exemplo:** *"Você é um assistente especializado em cibersegurança."*
 2. **Ajusta o tom e o estilo das respostas:** Pode determinar se o modelo responde de forma formal, casual ou técnica.  
    **Exemplo:** *"Responda de maneira objetiva e concisa."*
 3. **Restringe ou amplia certos conteúdos:** Pode bloquear tópicos proibidos ou incentivar explicações detalhadas.  
@@ -46,14 +44,14 @@ A **System Message** é uma mensagem especial usada para definir o comportamento
 
 ### Porque a System Message é importante?
 ✅ **Personalização**: Permite ajustar o comportamento da IA conforme a necessidade.  
-✅ **Controle**: Evita respostas inadequadas ou fora do escopo.  
-✅ **Consistência**: Garante que o modelo siga uma abordagem uniforme ao longo da interação.  
+✅ **Controle**: Evita respostas inadequadas ou fora do alvo.  
+✅ **Consistência**: Garante que o modelo segue uma abordagem uniforme ao longo da interação.  
 
 ---
 
 ## **Temperatura vs Top-P**
 ### O que são?
-Os parâmetros **Temperatura** e **Top-P** controlam a aleatoriedade e a criatividade das respostas do modelo.  
+Os parâmetros **Temperatura** e **Top-P** controlam a aleatoriedade e a criatividade das respostas do modelo. Normalmente, ajusta-se um ou outro, não ambos ao mesmo tempo.  
 
 ### Como funcionam?
 1. **Temperatura (🔥 Aleatoriedade):** Ajusta o quão imprevisível a resposta pode ser.  
@@ -61,7 +59,7 @@ Os parâmetros **Temperatura** e **Top-P** controlam a aleatoriedade e a criativ
    - Valores **altos (ex: 0.8 - 1.5)** → Respostas mais criativas e variadas.  
    **Exemplo:** Pergunta: *"Qual a capital da França?"*  
    - `Temperatura 0.2`: *"Paris."*  
-   - `Temperatura 1.0`: *"Paris, a cidade luz, famosa por sua Torre Eiffel!"*  
+   - `Temperatura 1.0`: *"Paris, a cidade luz, famosa pela Torre Eiffel!"*  
 
 2. **Top-P (🎯 Nucleus Sampling):** Controla a diversidade da resposta restringindo a escolha de palavras.
    - `Top-P = 1.0` → Considera todas as palavras possíveis.  
@@ -71,7 +69,6 @@ Os parâmetros **Temperatura** e **Top-P** controlam a aleatoriedade e a criativ
 ### Quando usar?
 ✅ **Use Temperatura para ajustar aleatoriedade** (valores altos = criatividade, valores baixos = precisão).  
 ✅ **Use Top-P para limitar escolhas de palavras** (valores baixos = respostas mais seguras).  
-✅ **Normalmente, se ajusta um ou outro, não ambos ao mesmo tempo.**  
 
 ---
 
@@ -84,14 +81,14 @@ Os parâmetros **Frequency Penalty** e **Presence Penalty** controlam como o mod
    - Penaliza palavras que já apareceram **muitas vezes** no texto.  
    - Quanto maior o valor, menos repetição ocorre.  
    **Exemplo:**
-   - `Frequency Penalty = 0.0`: *"O cachorro é bonito. O cachorro gosta de brincar. O cachorro é feliz."*  
-   - `Frequency Penalty = 1.0`: *"O cachorro é bonito. Ele gosta de brincar e é muito feliz."*  
+   - `Frequency Penalty = 0.0`: *"O cão é bonito. O cão gosta de brincar. O cão é feliz."*  
+   - `Frequency Penalty = 1.0`: *"O cão é bonito. Ele gosta de brincar e é muito feliz."*  
 
 2. **Presence Penalty (🆕 Incentiva Novidade)**
    - Penaliza palavras que **já apareceram pelo menos uma vez**, empurrando o modelo para introduzir novos conceitos.  
    **Exemplo:**
    - `Presence Penalty = 0.0`: *"Paris é uma cidade incrível. Paris tem monumentos históricos. Paris é um destino famoso."*  
-   - `Presence Penalty = 1.0`: *"Paris é uma cidade incrível. Seus monumentos históricos, como a Torre Eiffel e o Louvre, atraem turistas do mundo todo."*  
+   - `Presence Penalty = 1.0`: *"Paris é uma cidade incrível. Os seus monumentos históricos, como a Torre Eiffel e o Louvre, atraem turistas do mundo todo."*  
 
 ### Quando usar?
 ✅ **Use Frequency Penalty para evitar repetições desnecessárias.**  
