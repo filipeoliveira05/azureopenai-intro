@@ -3,18 +3,18 @@ Resumo das diferentes configurações e parâmetros utilizados no Playground do 
 
 # Tokenização
 ## O que é?
-A tokenização é o processo de dividir texto em tokens, que podem ser palavras, subpalavras, caracteres ou até unidades especiais.  
+A tokenização é o processo de **dividir texto** em **tokens**, que podem ser palavras, subpalavras, caracteres ou até unidades especiais.  
 Este processo é essencial para modelos de linguagem de inteligência artificial entenderem e processarem texto.  
 Os modelos têm um limite máximo de tokens por resposta. Se um texto ultrapassa esse limite, os tokens extras são cortados.  
 
 ## Como funciona?
-1. **Divisão do texto**  
+1. **Divisão do texto:**  
    O texto é quebrado em partes menores (tokens), que podem ser palavras inteiras ou pedaços de palavras.  
    Exemplo: O texto *"Eu gosto de programação"* seria dividido em ["Eu", "gosto", "de", "programação", "!"]  
-2. **Uso de subpalavras (BPE - Byte Pair Encoding)**  
+2. **Uso de subpalavras (BPE - Byte Pair Encoding):**  
    Para lidar com palavras desconhecidas, pode ser utilizado a técnica BPE, que quebra palavras em subpartes.  
    Exemplo: A palavra *"programação"* pode ser dividida em ["programa", "ção"]  
-3. **Transformação de cada token em números**  
+3. **Transformação de cada token em números:**  
    Modelos de inteligência artificial não compreendem texto diretamente. Por isso, cada token é convertido num número (ID do token).  
 
 ## Exemplo de Tokenização
